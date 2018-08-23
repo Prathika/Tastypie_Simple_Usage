@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'tastypie_example',
-            'USER': 'svc-echo01',
-            'PASSWORD': 'appmap@2015',
-            'HOST': '172.16.21.13',
+            'USER': 'user',
+            'PASSWORD': 'pwd',
+            'HOST': '',
             'PORT': '3306',
             'STORAGE_ENGINE': 'InnoDB',
     }
