@@ -6,11 +6,8 @@ from app.models import Applications
 from .app_users import AppUsersResource
 
 class ApplicationsResource(ModelResource):
-    #associated_by = fields.ForeignKey(UsersResource, attribute='associated_by', null=True)
-    created_by = fields.ToOneField(AppUsersResource,\
-    attribute = 'created_by', related_name='created_by',  null=True)
-    updated_by = fields.ToOneField(AppUsersResource, \
-    attribute = 'updated_by', related_name='updated_by',  null=True)
+    created_by = fields.ForeignKey('app.resources.AppUsersResource', 'created_by')
+    updated_by = fields.ForeignKey('app.resources.AppUsersResource','updated_by', null=True)
     class Meta:
         queryset = Applications.objects.all()
         resource_name = 'applications'
@@ -20,4 +17,3 @@ class ApplicationsResource(ModelResource):
         allowed_methods = ['get', 'post']
         authorization = Authorization()
         authentication = Authentication()
-
