@@ -19,8 +19,8 @@ class Applications(models.Model):
     app_id = models.AutoField(primary_key=True)
     app_name = models.CharField(max_length=100)
     description = models.CharField(max_length=100, blank=True,null=True)
-    created_by = models.ForeignKey(AppUsers, related_name='created_by')
-    updated_by = models.ForeignKey(AppUsers, related_name='updated_by', blank=True, null=True)
+    created_by = models.ForeignKey(AppUsers, related_name='c_by')
+    updated_by = models.ForeignKey(AppUsers, related_name='u_by', blank=True, null=True)
 
     class Meta:
         app_label = 'app'

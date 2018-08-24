@@ -7,7 +7,7 @@ from .app_users import AppUsersResource
 
 class ApplicationsResource(ModelResource):
     created_by = fields.ForeignKey('app.resources.AppUsersResource', 'created_by')
-    updated_by = fields.ForeignKey('app.resources.AppUsersResource','updated_by', null=True)
+    updated_by = fields.ForeignKey('app.resources.AppUsersResource', 'updated_by')
     class Meta:
         queryset = Applications.objects.all()
         resource_name = 'applications'
